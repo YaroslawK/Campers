@@ -1,0 +1,76 @@
+.hero{
+height: 100vh;
+    /* Висота секції на весь екран */
+    background-image: url('../../images/Home.jpg');
+    /* Шлях до вашої картинки */
+    background-size: cover;
+    /* Масштабує картинку, щоб повністю заповнити секцію */
+    background-position: center;
+    /* Центрує картинку */
+    background-repeat: no-repeat;
+    /* Запобігає повторенню картинки */
+    display: flex;
+    /* Використовуємо для вирівнювання контенту всередині */
+    justify-content: center;
+    /* Центр по горизонталі */
+    align-items: center;
+    /* Центр по вертикалі */
+    color: white;
+    /* Білий текст */
+    text-align: center;
+}
+
+.heroContent{
+max-width: 600px;
+    /* Обмежуємо ширину контенту */
+    padding: 20px;
+    /* Відступи всередині для красивого вигляду */
+}
+
+.heroTitle{
+/* H1 */
+    color: rgb(247, 247, 247);
+    font-family: Inter;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.heroCaption{
+/* H2 */
+    color: rgb(247, 247, 247);
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.heroButton{
+    /* Button */
+        position: static;
+        width: 173px;
+        height: 56px;
+        /* Auto layout */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10;
+        padding: 16px 60px 16px 60px;
+    
+    
+        /* Inside Auto Layout */
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        margin: 40px 0px;
+
+        border-radius: 200px;
+        
+            /* Button */
+            background: rgb(228, 72, 72);
+}
