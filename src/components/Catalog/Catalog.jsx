@@ -1,5 +1,13 @@
+import { Navigation } from "../Navigation/Navigation"
+import { Filters } from "./Filters/Filters"
+import { Truck } from "./Truck/Truck"
+import { Location } from "./Location/Location"
+
 export const Catalog = () => {
     return <>
-    <div>Hello</div>
-    </>
+        <Navigation/>
+        <Location/>
+        <Filters/>
+        <Truck/>
+</>
 }
