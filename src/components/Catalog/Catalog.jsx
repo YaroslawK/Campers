@@ -8,6 +8,6 @@ export const Catalog = () => {
         <Navigation/>
         <Location/>
         <Filters/>
-        <Truck/>
+        <Truck />
 </>
 }
