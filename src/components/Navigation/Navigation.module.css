@@ -13,3 +13,24 @@
         text-align: center;
 }
 
+.logo{
+color: #101828;
+font-family: Inter;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0%;
+    text-align: left;
+    margin-right: 450px;
+  
+}
+
+.logoSpan{
+    color: #475467;
+}
+
+.navigationSection{
+    display: flex;
+    margin: 24px 0px;
+    
+}

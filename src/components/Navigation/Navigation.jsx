@@ -5,7 +5,9 @@ import css from './Navigation.module.css';
 
 export const Navigation = () => {
 
-  return (<div className={css.navigation}>
+    return (<div className={css.navigationSection}>
+        <a href='/' className={css.logo}>Travel <span className={css.logoSpan}>Trucks</span></a> 
+        <div className={css.navigation}>
       <NavLink to='/' className={css.nav}>
           Home
       </NavLink>
@@ -13,7 +15,8 @@ export const Navigation = () => {
       <NavLink to='/catalog' className={css.nav}>
           Catalog
       </NavLink>
-      </div>
+        </div>
+    </div>
   );
 };
 

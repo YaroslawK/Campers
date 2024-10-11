@@ -1,5 +1,6 @@
 export const Location = () => {
-    return<>
+
+  return <>
     <p>Location</p>
     <input type="text" />
   </>;
