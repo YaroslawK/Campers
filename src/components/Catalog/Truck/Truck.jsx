@@ -1,26 +1,52 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { getArticlesApi } from "../../../api/articles-api";
+import css from "../Truck/Truck.module.css";
 
 export const Truck = () => {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    // Переміщуємося на маршрут /catalog/info
-    navigate('/catalog/info');
+    navigate("/catalog/info");
   };
+
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => {
+    const getArticles = async () => {
+      const response = await getArticlesApi();
+
+      setArticles(response);
+    };
+    getArticles();
+  }, []);
 
   return (
     <>
-      <img src="" alt="" />
-      <h2>Maveriks</h2>
-      <p>Price</p>
-      <p>Review</p>
-      <p>Location</p>
-      <p>View</p>
-      <button>Automatic</button>
-      <button>Petrol</button>
-      <button>Kitchen</button>
-      <button>AC</button>
-      <button onClick={handleButtonClick}>Show more</button>
+      <div >
+        <ul>
+          {articles.length > 0 &&
+            articles.map((article) => (
+              <li key={article.id} className={css.truckContainer}>
+                <div>
+                  <img className={css.image} src={article.gallery[0].original} alt={article.name} />
+                </div>
+                <div>
+                  <h2 className={css.title}>{article.name}</h2>
+                  <p className={css.price}>{article.price}</p>
+                  <p className={css.rating}>{article.rating}</p>
+                  <p className={css.location}>{article.location}</p>
+                  <p className={css.description}>{article.description}</p>
+                  <button className={css.icon}>Automatic</button>
+                  <button className={css.icon}>Petrol</button>
+                  <button className={css.icon}>Kitchen</button>
+                  <button className={css.icon}>AC</button>
+                  <button className={css.button} onClick={handleButtonClick}>Show more</button>
+                </div>
+              </li>
+            ))}
+        </ul>
+      </div>
     </>
   );
 };

@@ -1,7 +1,9 @@
+import css from './Location.module.css';
+
 export const Location = () => {
 
   return <>
-    <p>Location</p>
-    <input type="text" />
+    <p className={css.location}>Location</p>
+    <input className={css.locationInput} placeholder='Kyiv, Ukraine' type="text" />
   </>;
 };

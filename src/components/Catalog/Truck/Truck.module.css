@@ -1,0 +1,95 @@
+.truckContainer{
+    display: flex;
+}
+
+.image{
+    width: 292px;
+        height: 320px;
+        margin: 0px 24px;
+        border-radius: 10px;
+}
+
+.title{
+    color: rgb(16, 24, 40);
+        font-family: Inter;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 32px;
+        letter-spacing: 0%;
+        text-align: left;
+}
+
+.price{
+    color: rgb(16, 24, 40);
+        font-family: Inter;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 32px;
+        letter-spacing: 0%;
+        text-align: left;
+}
+
+.rating{
+    color: rgb(16, 24, 40);
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0%;
+        text-align: left;
+}
+
+.location{
+    color: rgb(16, 24, 40);
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0%;
+        text-align: left;
+}
+
+.description{
+    color: rgb(71, 84, 103);
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0%;
+        text-align: left;
+}
+
+.icon{
+    border-radius: 100px;
+        /* Badges */
+        background: rgb(242, 244, 247);
+        padding: 12px 18px 12px 18px;
+        width: 123px;
+            height: 48px;
+}
+
+.icon:hover{
+    border: 1px solid rgb(228, 72, 72);
+}
+
+.button{
+            position: static;
+                width: 200px;
+                height: 56px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 10;
+                padding: 16px 60px 16px 60px;
+            
+            
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+                margin: 40px 0px;
+            
+                border-radius: 200px;
+            
+                background: rgb(228, 72, 72);
+}

@@ -5,7 +5,11 @@ import { HomePage } from "./components/HomePage/HomePage";
 import { Catalog } from "./components/Catalog/Catalog";
 import { TruckInfo } from "./components/Catalog/Truck/TruckInfo/TruckInfo";
 
+
+
 function App() {
+
+
   return (
     <>
       <Routes>
