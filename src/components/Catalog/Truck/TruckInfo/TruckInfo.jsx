@@ -50,8 +50,8 @@ export const TruckInfo = () => {
       ) : (
         <p>Loading...</p> 
       )}
-      <InfoNavigation />
-        <BookingForm />
+      <div className={css.infoContainer}><InfoNavigation />
+        <BookingForm /></div>
     </>
   );
 };

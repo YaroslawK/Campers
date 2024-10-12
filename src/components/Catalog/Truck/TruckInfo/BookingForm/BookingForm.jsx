@@ -10,7 +10,7 @@ export const BookingForm = () => {
     comment: Yup.string().max(500, 'Comment must be 500 characters or less'),
   });
 
-  return (<>
+  return (<><div>
     <h2 className={css.title}>Book your campervan now</h2>
     <p className={css.caption}>Stay connected! We are always ready to help you.</p>
     <Formik
@@ -55,6 +55,6 @@ export const BookingForm = () => {
           </Form>
       )}
     </Formik>
-    </>
+   </div> </>
   );
 };

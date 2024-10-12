@@ -62,3 +62,7 @@
 .navFormContainer{
     display: flex;
 }
+
+.infoContainer{
+    display: flex;
+}

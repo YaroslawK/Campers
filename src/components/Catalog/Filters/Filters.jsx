@@ -18,8 +18,9 @@ export const Filters = () => {
         <button className={css.filtersIcon}>Van</button>
         <button className={css.filtersIcon}>Fully Integrated</button>
         <button className={css.filtersIcon}>Alcove</button>
-        <button className={css.filtersIcon}>Search</button>
+      
       </div>
+        <button className={css.searchButton}>Search</button>
     </>
   );
 };

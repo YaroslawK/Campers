@@ -17,12 +17,12 @@ export const InfoNavigation = () => {
     };
 
     return (
-        <> <div className={css.container}>
+        <> <div><div className={css.container}>
             <button className={css.caption} onClick={() => setInfoNavigation('A')}>Features</button>
             <button className={css.caption} onClick={() => setInfoNavigation('B')}>Review</button></div>
             <div >
                 {renderComponent()}
             </div>
-        </>
+       </div> </>
     );
 };

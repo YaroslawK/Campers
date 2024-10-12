@@ -5,29 +5,44 @@ import css from "../Truck/Truck.module.css";
 
 export const Truck = () => {
   const navigate = useNavigate();
+  const [articles, setArticles] = useState([]); 
+  const [visibleArticles, setVisibleArticles] = useState([]); 
+  const [loading, setLoading] = useState(false);
+  const [page, setPage] = useState(1); 
+  const perPage = 4;
+
+
+  const getArticles = async () => {
+    setLoading(true);
+    const response = await getArticlesApi(); 
+    setArticles(response); 
+    setVisibleArticles(response.slice(0, perPage)); 
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    getArticles(); 
+  }, []);
+
+
+  const loadMoreArticles = () => {
+    const nextPage = page + 1; 
+    const newVisibleArticles = articles.slice(0, nextPage * perPage); 
+    setVisibleArticles(newVisibleArticles); 
+    setPage(nextPage); 
+  };
 
   const handleButtonClick = (id) => {
     navigate(`/catalog/${id}`);
   };
 
-  const [articles, setArticles] = useState([]);
-
-  useEffect(() => {
-    const getArticles = async () => {
-      const response = await getArticlesApi();
-
-      setArticles(response);
-    };
-    getArticles();
-  }, []);
-
   return (
     <>
       <div>
         <ul>
-          {articles.length > 0 &&
-            articles.map((article) => (
-              <li key={article.id} className={css.truckContainer}>
+          {visibleArticles.length > 0 &&
+            visibleArticles.map((article, index) => (
+              <li key={`${article.id}-${index}`} className={css.truckContainer}>
                 <div>
                   <img
                     className={css.image}
@@ -55,6 +70,15 @@ export const Truck = () => {
               </li>
             ))}
         </ul>
+        {visibleArticles.length < articles.length && !loading && (
+          <button onClick={loadMoreArticles} className={css.loadMoreButton}>
+            Load more
+          </button>
+        )}
+        {loading && <p>Loading...</p>}
+        {visibleArticles.length >= articles.length && !loading && (
+          <p>No more articles to load</p>
+        )}
       </div>
     </>
   );
