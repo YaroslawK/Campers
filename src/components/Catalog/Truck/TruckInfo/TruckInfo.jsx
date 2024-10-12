@@ -1,55 +1,43 @@
 import { Navigation } from "../../../Navigation/Navigation";
-// import { BookingForm } from "./BookingForm/BookingForm";
 import { InfoNavigation } from "./InfoNavigation/InfoNavigation";
-import { useEffect, useState } from "react";
-import { getArticlesApi } from "../../../../api/articles-api";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import css from '../TruckInfo/TruckInfo.module.css'
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchTruckDetails, selectTruckDetails, selectLoading } from '../../../../redux/Trucks/truckSlice';
+import css from '../TruckInfo/TruckInfo.module.css';
 
 export const TruckInfo = () => {
-  const [articles, setArticles] = useState([]);
-  const [truckDetails, setTruckDetails] = useState(null);
   const { id } = useParams();
+  const dispatch = useDispatch();
+  const truckDetails = useSelector(selectTruckDetails);
+  console.log(truckDetails);
   
+  const loading = useSelector(selectLoading);
 
   useEffect(() => {
-    const getArticles = async () => {
-      const response = await getArticlesApi();
-      setArticles(response);
-    };
-    getArticles();
-  }, []);
-
-  useEffect(() => {
-    const fetchTruckDetails = async () => {
-      const article = articles.find(article => article.id === id);
-      if (article) {
-        setTruckDetails(article); 
-      }
-    };
-    
-    if (articles.length > 0) {
-      fetchTruckDetails();
-    }
-  }, [articles, id]);
+    dispatch(fetchTruckDetails(id));
+  }, [dispatch, id]);
 
   return (
     <>
       <Navigation />
-      {truckDetails ? ( 
+      {loading ? ( 
+        <p>Loading...</p> 
+      ) : truckDetails ? ( 
         <div className={css.container}>
           <h2 className={css.title}>{truckDetails.name}</h2>
           <p className={css.price}>€{truckDetails.price}</p>
           <p className={css.rating}>{truckDetails.rating}</p>
           <p className={css.location}> Location: {truckDetails.location}</p>
           <div className={css.imageContainer}>
-          {truckDetails.gallery.map((image, index) => (
-  <img className={css.image} key={index} src={image.original} alt={`${truckDetails.name} image ${index + 1}`} />
-))}</div>
+            {truckDetails.gallery.map((image, index) => (
+              <img className={css.image} key={index} src={image.original} alt={`${truckDetails.name} image ${index + 1}`} />
+            ))}
+          </div>
           <p className={css.description}>{truckDetails.description}</p>
         </div>
       ) : (
-        <p>Loading...</p> 
+        <p>No truck details found</p> 
       )}
       
       <InfoNavigation />

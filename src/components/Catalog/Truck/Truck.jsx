@@ -1,37 +1,29 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { getArticlesApi } from "../../../api/articles-api";
-import css from "../Truck/Truck.module.css";
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchArticles, selectArticles, selectLoading } from '../../../redux/Trucks/slice';
+import css from '../Truck/Truck.module.css';
 
 export const Truck = () => {
   const navigate = useNavigate();
-  const [articles, setArticles] = useState([]); 
-  const [visibleArticles, setVisibleArticles] = useState([]); 
-  const [loading, setLoading] = useState(false);
-  const [page, setPage] = useState(1); 
+  const dispatch = useDispatch();
+  const articles = useSelector(selectArticles);
+  
+  const loading = useSelector(selectLoading);
+  const [visibleArticles, setVisibleArticles] = useState([]);
+  const [page, setPage] = useState(1);
   const perPage = 4;
 
-
-  const getArticles = async () => {
-    setLoading(true);
-    const response = await getArticlesApi(); 
-    console.log(response);
-    
-    setArticles(response); 
-    setVisibleArticles(response.slice(0, perPage)); 
-    setLoading(false);
-  };
+  useEffect(() => {
+    dispatch(fetchArticles());
+  }, [dispatch]);
 
   useEffect(() => {
-    getArticles(); 
-  }, []);
-
+    setVisibleArticles(articles.slice(0, page * perPage));
+  }, [articles, page]);
 
   const loadMoreArticles = () => {
-    const nextPage = page + 1; 
-    const newVisibleArticles = articles.slice(0, nextPage * perPage); 
-    setVisibleArticles(newVisibleArticles); 
-    setPage(nextPage); 
+    setPage((prevPage) => prevPage + 1);
   };
 
   const handleButtonClick = (id) => {
@@ -54,8 +46,9 @@ export const Truck = () => {
                 </div>
                 <div>
                   <div className={css.cont}>
-                  <h2 className={css.title}>{article.name}</h2>
-                  <p className={css.price}>€{article.price}</p></div>
+                    <h2 className={css.title}>{article.name}</h2>
+                    <p className={css.price}>€{article.price}</p>
+                  </div>
                   <p className={css.rating}>{article.rating}</p>
                   <p className={css.location}>{article.location}</p>
                   <p className={css.description}>{article.description}</p>
