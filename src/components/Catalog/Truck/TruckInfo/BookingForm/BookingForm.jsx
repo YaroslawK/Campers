@@ -1,5 +1,6 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import css from './BookingForm.module.css'
 
 export const BookingForm = () => {
   const validationSchema = Yup.object({
@@ -9,7 +10,9 @@ export const BookingForm = () => {
     comment: Yup.string().max(500, 'Comment must be 500 characters or less'),
   });
 
-  return (
+  return (<>
+    <h2 className={css.title}>Book your campervan now</h2>
+    <p className={css.caption}>Stay connected! We are always ready to help you.</p>
     <Formik
       initialValues={{
         name: '',
@@ -26,33 +29,32 @@ export const BookingForm = () => {
     >
       {() => (
         <Form>
-          <div>
-            <label htmlFor="name">Name</label><br />
-            <Field type="text" id="name" name="name" />
-            <ErrorMessage name="name" component="div" className="error" /><br />
-          </div>
+          <div className={css.formContainer}>
+            <div className={css.formGroup}>
+              <Field type="text" id="name" name="name" placeholder="Name" className={css.input} />
+              <ErrorMessage name="name" component="div" className={css.error} />
+            </div>
 
-          <div>
-            <label htmlFor="email">Email</label><br />
-            <Field type="email" id="email" name="email" />
-            <ErrorMessage name="email" component="div" className="error" /><br />
-          </div>
+            <div className={css.formGroup}>
+              <Field type="email" id="email" name="email" placeholder="Email" className={css.input} />
+              <ErrorMessage name="email" component="div" className={css.error} />
+            </div>
 
-          <div>
-            <label htmlFor="bookingDate">Booking Date</label><br />
-            <Field type="date" id="bookingDate" name="bookingDate" />
-            <ErrorMessage name="bookingDate" component="div" className="error" /><br />
-          </div>
+            <div className={css.formGroup}>
+              <Field type="date" id="bookingDate" name="bookingDate" className={css.input} />
+              <label htmlFor="bookingDate" className={css.label}>Booking Date</label>
+              <ErrorMessage name="bookingDate" component="div" className={css.error} />
+            </div>
 
-          <div>
-            <label htmlFor="comment">Comment</label><br />
-            <Field as="textarea" id="comment" name="comment" rows="4" />
-            <ErrorMessage name="comment" component="div" className="error" /><br />
-          </div>
-
-          <button type="submit">Send</button>
-        </Form>
+            <div className={css.formGroup}>
+              <Field as="textarea" id="comment" name="comment" rows="4" placeholder="Comment" className={css.textarea} />
+              <ErrorMessage name="comment" component="div" className={css.error} />
+            </div>
+</div>
+            <button className={css.formButton} type="submit">Send</button>
+          </Form>
       )}
     </Formik>
+    </>
   );
 };

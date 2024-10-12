@@ -6,8 +6,8 @@ import css from "../Truck/Truck.module.css";
 export const Truck = () => {
   const navigate = useNavigate();
 
-  const handleButtonClick = () => {
-    navigate("/catalog/info");
+  const handleButtonClick = (id) => {
+    navigate(`/catalog/${id}`);
   };
 
   const [articles, setArticles] = useState([]);
@@ -23,13 +23,17 @@ export const Truck = () => {
 
   return (
     <>
-      <div >
+      <div>
         <ul>
           {articles.length > 0 &&
             articles.map((article) => (
               <li key={article.id} className={css.truckContainer}>
                 <div>
-                  <img className={css.image} src={article.gallery[0].original} alt={article.name} />
+                  <img
+                    className={css.image}
+                    src={article.gallery[0].original}
+                    alt={article.name}
+                  />
                 </div>
                 <div>
                   <h2 className={css.title}>{article.name}</h2>
@@ -41,7 +45,12 @@ export const Truck = () => {
                   <button className={css.icon}>Petrol</button>
                   <button className={css.icon}>Kitchen</button>
                   <button className={css.icon}>AC</button>
-                  <button className={css.button} onClick={handleButtonClick}>Show more</button>
+                  <button
+                    className={css.button}
+                    onClick={() => handleButtonClick(article.id)}
+                  >
+                    Show more
+                  </button>
                 </div>
               </li>
             ))}

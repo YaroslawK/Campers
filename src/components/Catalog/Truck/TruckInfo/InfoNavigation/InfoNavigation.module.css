@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    gap: 40px;
+}
+
+.caption{
+    color: rgb(16, 24, 40);
+        font-family: Inter;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 24px;
+        letter-spacing: 0%;
+        margin-bottom: 68px;
+}

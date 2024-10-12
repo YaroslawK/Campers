@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Details } from "../Details/Details";
 import { Reviews } from "../Reviews/Reviews";
+import css from './InfoNavigation.module.css'
 
 export const InfoNavigation = () => {
     const [InfoNavigation, setInfoNavigation] = useState('A');
@@ -16,10 +17,10 @@ export const InfoNavigation = () => {
     };
 
     return (
-        <>
-            <p onClick={() => setInfoNavigation('A')}>Features</p>
-            <p onClick={() => setInfoNavigation('B')}>Review</p>
-            <div style={{ marginTop: '20px' }}>
+        <> <div className={css.container}>
+            <button className={css.caption} onClick={() => setInfoNavigation('A')}>Features</button>
+            <button className={css.caption} onClick={() => setInfoNavigation('B')}>Review</button></div>
+            <div >
                 {renderComponent()}
             </div>
         </>

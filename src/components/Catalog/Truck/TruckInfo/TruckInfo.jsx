@@ -3,39 +3,55 @@ import { BookingForm } from "./BookingForm/BookingForm";
 import { InfoNavigation } from "./InfoNavigation/InfoNavigation";
 import { useEffect, useState } from "react";
 import { getArticlesApi } from "../../../../api/articles-api";
+import { useParams } from "react-router-dom";
+import css from '../TruckInfo/TruckInfo.module.css'
 
 export const TruckInfo = () => {
   const [articles, setArticles] = useState([]);
-  
+  const [truckDetails, setTruckDetails] = useState(null);
+  const { id } = useParams();
   
 
   useEffect(() => {
     const getArticles = async () => {
       const response = await getArticlesApi();
-      console.log(response);
-      
       setArticles(response);
     };
     getArticles();
   }, []);
+
+  useEffect(() => {
+    const fetchTruckDetails = async () => {
+      const article = articles.find(article => article.id === id);
+      if (article) {
+        setTruckDetails(article); 
+      }
+    };
+    
+    if (articles.length > 0) {
+      fetchTruckDetails();
+    }
+  }, [articles, id]);
+
   return (
     <>
       <Navigation />
-      <ul>
-        
-          {articles.length > 0 &&
-            articles.map((article) => (
-              <li key={article.id}>{article.name }</li>
-            ))}
-       
-      </ul>
-      <p>Review</p>
-      <p>Location</p>
-      <p>Price</p>
-      <img src="" alt="" />
-      <p>view</p>
+      {truckDetails ? ( 
+        <div className={css.container}>
+          <h2 className={css.title}>{truckDetails.name}</h2>
+          <p className={css.price}>Price: {truckDetails.price}</p>
+          <p className={css.rating}>{truckDetails.rating}</p>
+          <p className={css.location}> Location: {truckDetails.location}</p>
+          {truckDetails.gallery.map((image, index) => (
+  <img className={css.image} key={index} src={image.original} alt={`${truckDetails.name} image ${index + 1}`} />
+))}
+          <p className={css.description}>Description: {truckDetails.description}</p>
+        </div>
+      ) : (
+        <p>Loading...</p> 
+      )}
       <InfoNavigation />
-      <BookingForm />
+        <BookingForm />
     </>
   );
 };

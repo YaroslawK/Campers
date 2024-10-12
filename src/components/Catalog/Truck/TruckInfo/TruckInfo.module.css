@@ -1,0 +1,64 @@
+.title {
+    color: rgb(16, 24, 40);
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.price {
+    color: rgb(16, 24, 40);
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.rating {
+    color: rgb(16, 24, 40);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.location {
+    color: rgb(16, 24, 40);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.description {
+    color: rgb(71, 84, 103);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.image{
+    width: 292px;
+        height: 312px;
+        border-radius: 10px;
+        margin: 0px 10px;
+}
+
+.container{
+    margin-bottom: 60px;
+}
+
+.navFormContainer{
+    display: flex;
+}

@@ -1,0 +1,68 @@
+.icon {
+    border-radius: 100px;
+    /* Badges */
+    background: rgb(242, 244, 247);
+    padding: 12px 18px 12px 18px;
+    width: 123px;
+    height: 48px;
+   
+}
+
+.icon:hover {
+    border: 1px solid rgb(228, 72, 72);
+}
+
+.iconContainer{
+display: flex;
+gap: 8px;
+margin-bottom: 100px;
+}
+
+
+    .vehicleDetails {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+    
+        .vehicleDetails th,
+        .vehicleDetails td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    
+        .vehicleDetails th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+    
+        .vehicleDetails tr:hover {
+            background-color: #f5f5f5;
+        }
+    
+        h2 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .detailsTitle{
+            color: rgb(16, 24, 40);
+                font-family: Inter;
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 24px;
+                letter-spacing: 0%;
+                text-align: left;
+        }
+
+        .detailsItem{
+            color: rgb(16, 24, 40);
+                font-family: Inter;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 24px;
+                letter-spacing: 0%;
+                text-align: center;
+        }
