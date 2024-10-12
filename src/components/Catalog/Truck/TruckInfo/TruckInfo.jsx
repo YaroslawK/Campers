@@ -1,5 +1,5 @@
 import { Navigation } from "../../../Navigation/Navigation";
-import { BookingForm } from "./BookingForm/BookingForm";
+// import { BookingForm } from "./BookingForm/BookingForm";
 import { InfoNavigation } from "./InfoNavigation/InfoNavigation";
 import { useEffect, useState } from "react";
 import { getArticlesApi } from "../../../../api/articles-api";
@@ -39,19 +39,20 @@ export const TruckInfo = () => {
       {truckDetails ? ( 
         <div className={css.container}>
           <h2 className={css.title}>{truckDetails.name}</h2>
-          <p className={css.price}>Price: {truckDetails.price}</p>
+          <p className={css.price}>€{truckDetails.price}</p>
           <p className={css.rating}>{truckDetails.rating}</p>
           <p className={css.location}> Location: {truckDetails.location}</p>
+          <div className={css.imageContainer}>
           {truckDetails.gallery.map((image, index) => (
   <img className={css.image} key={index} src={image.original} alt={`${truckDetails.name} image ${index + 1}`} />
-))}
-          <p className={css.description}>Description: {truckDetails.description}</p>
+))}</div>
+          <p className={css.description}>{truckDetails.description}</p>
         </div>
       ) : (
         <p>Loading...</p> 
       )}
-      <div className={css.infoContainer}><InfoNavigation />
-        <BookingForm /></div>
+      
+      <InfoNavigation />
     </>
   );
 };

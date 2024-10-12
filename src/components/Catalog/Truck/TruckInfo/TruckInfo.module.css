@@ -52,11 +52,21 @@
     width: 292px;
         height: 312px;
         border-radius: 10px;
-        margin: 0px 10px;
+}
+
+.imageContainer{
+    display: flex;
+    align-items: center;
+    gap: 48px;
 }
 
 .container{
     margin-bottom: 60px;
+        max-width: 1440px;
+            padding-left: 64px;
+            padding-right: 64px;
+            margin-left: auto;
+            margin-right: auto;
 }
 
 .navFormContainer{
@@ -65,4 +75,8 @@
 
 .infoContainer{
     display: flex;
+                padding-left: 64px;
+                padding-right: 64px;
+                margin-left: auto;
+                margin-right: auto;
 }

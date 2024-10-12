@@ -42,7 +42,9 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 12px;
+    margin-bottom: 48px;
+    width: 360px;
+    flex-wrap: wrap;
 }
 
 .searchButton{

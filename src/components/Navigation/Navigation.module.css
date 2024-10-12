@@ -1,3 +1,18 @@
+.navigationContainer{
+    max-width: 1440px;
+        padding-left: 64px;
+        padding-right: 64px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+            /* Badges */
+            border-bottom: 1px solid rgb(242, 244, 247);
+            /* Inputs */
+            background: rgb(247, 247, 247);
+}
+
 .navigation{
     display:  flex;
     gap: 32px;
@@ -13,10 +28,23 @@
         text-align: center;
 }
 
+.nav:hover{
+   color: #D84343; 
+}
+
+.nav:focus {
+    color: #D84343;
+}
+
+.active {
+    color: #D84343;
+    font-weight: bold;
+}
+
 .logo{
 color: #101828;
 font-family: Inter;
-    font-size: 48px;
+    font-size: 16px;
     font-weight: 600;
     line-height: 32px;
     letter-spacing: 0%;

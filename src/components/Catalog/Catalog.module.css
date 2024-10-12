@@ -1,5 +1,12 @@
 .catalog{
     display: flex;  
+    max-width: 1440px;
+        padding-left: 64px;
+        padding-right: 64px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 48px;
+        padding-bottom: 48px;
 }
 
 .container{

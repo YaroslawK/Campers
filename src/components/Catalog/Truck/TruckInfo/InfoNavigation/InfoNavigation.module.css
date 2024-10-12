@@ -1,6 +1,10 @@
 .container{
     display: flex;
     gap: 40px;
+        padding-left: 64px;
+            padding-right: 64px;
+            margin-left: auto;
+            margin-right: auto;
 }
 
 .caption{
@@ -11,4 +15,30 @@
         line-height: 24px;
         letter-spacing: 0%;
         margin-bottom: 68px;
+}
+
+.infoContainer{
+   display: flex;
+        padding-left: 64px;
+        padding-right: 64px;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+.featuresContainer{
+    margin-right: 40px;
+    padding: 44px 80px 44px 80px;
+    border-radius: 10px;
+    
+        /* Inputs */
+        background: rgb(247, 247, 247);
+        max-width: 631px;
+}
+
+.formContainer{
+    box-sizing: border-box;
+        /* Gray light */
+        border: 1px solid rgb(218, 221, 225);
+        border-radius: 10px;
+        padding: 44px;
 }

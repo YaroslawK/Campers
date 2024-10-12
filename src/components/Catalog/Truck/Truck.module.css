@@ -1,12 +1,21 @@
 .truckContainer{
     display: flex;
+    padding: 24px;
+    box-sizing: border-box;
+        /* Gray light */
+        border: 1px solid rgb(218, 221, 225);
+        border-radius: 20px;
+        /* White */
+        background: rgb(255, 255, 255);
+        width: 888px;
+        height: 368px;
 }
 
 .image{
     width: 292px;
         height: 320px;
-        margin: 0px 24px;
         border-radius: 10px;
+        margin-right: 24px;
 }
 
 .title{
@@ -92,4 +101,9 @@
                 border-radius: 200px;
             
                 background: rgb(228, 72, 72);
+}
+
+.cont{
+    display: flex;
+    justify-content: space-between;
 }

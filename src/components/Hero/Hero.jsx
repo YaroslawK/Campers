@@ -7,7 +7,7 @@ export const Hero = () => {
     navigate('/catalog');
   };
 
-  return (
+  return <div className={css.background}>
     <section className={css.hero}>
       <div className={css.heroContainer}>
         <h1 className={css.heroTitle}>Campers of your dreams</h1>
@@ -17,5 +17,5 @@ export const Hero = () => {
         </button>
       </div>
     </section>
-  );
+</div>
 };

@@ -15,6 +15,8 @@ export const Truck = () => {
   const getArticles = async () => {
     setLoading(true);
     const response = await getArticlesApi(); 
+    console.log(response);
+    
     setArticles(response); 
     setVisibleArticles(response.slice(0, perPage)); 
     setLoading(false);
@@ -51,8 +53,9 @@ export const Truck = () => {
                   />
                 </div>
                 <div>
+                  <div className={css.cont}>
                   <h2 className={css.title}>{article.name}</h2>
-                  <p className={css.price}>{article.price}</p>
+                  <p className={css.price}>€{article.price}</p></div>
                   <p className={css.rating}>{article.rating}</p>
                   <p className={css.location}>{article.location}</p>
                   <p className={css.description}>{article.description}</p>

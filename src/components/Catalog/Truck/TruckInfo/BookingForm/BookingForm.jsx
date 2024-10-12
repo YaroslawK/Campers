@@ -41,13 +41,12 @@ export const BookingForm = () => {
             </div>
 
             <div className={css.formGroup}>
-              <Field type="date" id="bookingDate" name="bookingDate" className={css.input} />
-              <label htmlFor="bookingDate" className={css.label}>Booking Date</label>
+              <Field type="date" id="bookingDate" placeholder='Booking Date'name="bookingDate" className={css.input} />
               <ErrorMessage name="bookingDate" component="div" className={css.error} />
             </div>
 
             <div className={css.formGroup}>
-              <Field as="textarea" id="comment" name="comment" rows="4" placeholder="Comment" className={css.textarea} />
+              <Field as="textarea" id="comment" name="comment" rows="4" placeholder="Comment" className={css.input} />
               <ErrorMessage name="comment" component="div" className={css.error} />
             </div>
 </div>

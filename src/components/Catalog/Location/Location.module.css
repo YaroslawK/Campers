@@ -6,6 +6,7 @@ color: rgb(108, 113, 123);
     line-height: 24px;
     letter-spacing: 0%;
     text-align: left;
+    margin-bottom: 24px;
 }
 
 .locationInput{
@@ -17,4 +18,13 @@ color: rgb(16, 24, 40);
     letter-spacing: 0%;
     text-align: left;
     margin-bottom: 40px;
+}
+
+.locationInput::placeholder{
+    color: rgb(16, 24, 40);
+}
+
+.icon {
+margin-right: 8px;
+    display: inline-block;
 }

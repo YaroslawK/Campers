@@ -57,3 +57,10 @@
     flex-direction: column;
     gap: 14px;
 }
+
+.input{
+    border-radius: 12px;
+        /* Inputs */
+        background: rgb(247, 247, 247);
+        padding: 18px 337px 18px 18px;
+}
