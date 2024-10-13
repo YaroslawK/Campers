@@ -1,8 +1,8 @@
 import { Navigation } from "../Navigation/Navigation";
-import { Filters } from "./Filters/Filters";
 import { Truck } from "./Truck/Truck";
 import { Location } from "./Location/Location";
 import css from "../Catalog/Catalog.module.css";
+import { Filters } from "./Filters/Filters";
 
 export const Catalog = () => {
   return (

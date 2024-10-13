@@ -10,7 +10,7 @@ export const Details = () => {
   const dispatch = useDispatch();
   const articles = useSelector(selectArticles);
   const truckDetails = useSelector(selectTruckDetails);
-  console.log(articles);
+
   
 
   useEffect(() => {

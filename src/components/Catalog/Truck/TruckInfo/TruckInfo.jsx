@@ -10,7 +10,6 @@ export const TruckInfo = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const truckDetails = useSelector(selectTruckDetails);
-  console.log(truckDetails);
   
   const loading = useSelector(selectLoading);
 
@@ -26,7 +25,7 @@ export const TruckInfo = () => {
       ) : truckDetails ? ( 
         <div className={css.container}>
           <h2 className={css.title}>{truckDetails.name}</h2>
-          <p className={css.price}>€{truckDetails.price}</p>
+          <p className={css.price}>€{truckDetails.price}.00</p>
           <p className={css.rating}>{truckDetails.rating}</p>
           <p className={css.location}> Location: {truckDetails.location}</p>
           <div className={css.imageContainer}>
