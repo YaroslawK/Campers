@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { setFilters  } from "../../../redux/Trucks/filtersSlice";
+import { setFilters } from "../../../redux/Trucks/filtersSlice";
 import css from "./Filters.module.css";
 import { useState } from "react";
 
@@ -15,15 +15,11 @@ export const Filters = () => {
     form: "",
   });
 
-  console.log(filters);
-  
-
   const handleFilterChange = (key) => {
     const updatedFilters = { ...filters, [key]: !filters[key] };
-  
     
     setLocalFilters(updatedFilters);
-    dispatch(setFilters(updatedFilters)); 
+    dispatch(setFilters(updatedFilters));
   };
 
   const handleFormFilterChange = (formType) => {
@@ -72,14 +68,14 @@ export const Filters = () => {
       <h3 className={css.filters}>Vehicle type</h3>
       <div className={css.filtersContainer}>
         <button
-          className={filters.form === "van" ? css.filtersIconActive : css.filtersIcon}
-          onClick={() => handleFormFilterChange("van")}
+          className={filters.form === "panelTruck" ? css.filtersIconActive : css.filtersIcon}
+          onClick={() => handleFormFilterChange("panelTruck")}
         >
           Van
         </button>
         <button
-          className={filters.form === "fully-integrated" ? css.filtersIconActive : css.filtersIcon}
-          onClick={() => handleFormFilterChange("fully-integrated")}
+          className={filters.form === "fullyIntegrated" ? css.filtersIconActive : css.filtersIcon}
+          onClick={() => handleFormFilterChange("fullyIntegrated")}
         >
           Fully Integrated
         </button>
@@ -90,7 +86,6 @@ export const Filters = () => {
           Alcove
         </button>
       </div>
-      <button className={css.searchButton}>Search</button>
     </>
   );
 };

@@ -47,9 +47,6 @@
                 height: 96px;
 }
 
-.filtersIcon:focus{
-    border: 1px solid rgb(228, 72, 72);
-}
 
 .filtersContainer{
     display: flex;

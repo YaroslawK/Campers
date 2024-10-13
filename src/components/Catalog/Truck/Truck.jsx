@@ -3,16 +3,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchArticles, selectArticles, selectLoading } from "../../../redux/Trucks/slice";
 import { selectFilters } from "../../../redux/Trucks/filtersSlice";
 import css from "../Truck/Truck.module.css";
+import { useNavigate } from "react-router-dom";
 
 export const Truck = () => {
   const dispatch = useDispatch();
   const articles = useSelector(selectArticles);
   const loading = useSelector(selectLoading);
-  const filters = useSelector(selectFilters);  
+  const filters = useSelector(selectFilters);
 
   const [visibleArticles, setVisibleArticles] = useState([]);
   const [page, setPage] = useState(1);
   const perPage = 4;
+  const navigate = useNavigate();
+
+  const handleButtonClick = (id) => {
+    navigate(`/catalog/${id}`);
+  };
 
   useEffect(() => {
     dispatch(fetchArticles());
@@ -26,14 +32,44 @@ export const Truck = () => {
         (!filters.kitchen || article.kitchen) &&
         (!filters.TV || article.TV) &&
         (!filters.bathroom || article.bathroom) &&
-        (!filters.form || article.form === filters.form)
+        (!filters.water || article.water) &&
+        (!filters.gas || article.gas) &&
+        (!filters.form || 
+          article.form === filters.form || 
+          filters.form === "alcove" && article.form === "alcove" ||
+          filters.form === "fullyIntegrated" && article.form === "fullyIntegrated" ||
+          filters.form === "panelTruck" && article.form === "panelTruck")
       );
     });
-    setVisibleArticles(filteredArticles.slice(0, page * perPage));
+
+    console.log(filteredArticles);
+
+    const newVisibleArticles = filteredArticles.slice(0, page * perPage);
+    setVisibleArticles(newVisibleArticles);
   }, [articles, filters, page]);
 
   const loadMoreArticles = () => {
     setPage((prevPage) => prevPage + 1);
+  };
+
+  const hasMoreArticles = () => {
+    const filteredArticles = articles.filter((article) => {
+      return (
+        (!filters.AC || article.AC) &&
+        (!filters.automatic || article.transmission === "automatic") &&
+        (!filters.kitchen || article.kitchen) &&
+        (!filters.TV || article.TV) &&
+        (!filters.bathroom || article.bathroom) &&
+        (!filters.water || article.water) &&
+        (!filters.gas || article.gas) &&
+        (!filters.form || 
+          article.form === filters.form || 
+          filters.form === "alcove" && article.form === "alcove" ||
+          filters.form === "fullyIntegrated" && article.form === "fullyIntegrated" ||
+          filters.form === "panelTruck" && article.form === "panelTruck")
+      );
+    });
+    return visibleArticles.length < filteredArticles.length;
   };
 
   return (
@@ -57,23 +93,64 @@ export const Truck = () => {
                 <p className={css.rating}>{article.rating}</p>
                 <p className={css.location}>{article.location}</p>
                 <p className={css.description}>{article.description}</p>
-                <button className={css.icon}>Automatic</button>
-                <button className={css.icon}>Petrol</button>
-                <button className={css.icon}>Kitchen</button>
-                <button className={css.icon}>AC</button>
+
+                {article.transmission === "automatic" && (
+                  <button className={css.icon}>Automatic</button>
+                )}
+                {article.transmission === "manual" && (
+                  <button className={css.icon}>Manual</button>
+                )}
+                {article.fuel === "petrol" && (
+                  <button className={css.icon}>Petrol</button>
+                )}
+                {article.fuel === "diesel" && (
+                  <button className={css.icon}>Diesel</button>
+                )}
+                {article.fuel === "hybrid" && (
+                  <button className={css.icon}>Hybrid</button>
+                )}
+                {article.kitchen && (
+                  <button className={css.icon}>Kitchen</button>
+                )}
+                {article.AC && (
+                  <button className={css.icon}>AC</button>
+                )}
+                {article.bathroom && (
+                  <button className={css.icon}>Bathroom</button>
+                )}
+                {article.water && (
+                  <button className={css.icon}>Water</button>
+                )}
+                {article.gas && (
+                  <button className={css.icon}>Gas</button>
+                )}
+                {article.TV && (
+                  <button className={css.icon}>TV</button>
+                )}
+
+
+                <button
+                  className={css.button}
+                  onClick={() => handleButtonClick(article.id)}
+                >
+                  Show more
+                </button>
               </div>
             </li>
           ))}
       </ul>
-      {visibleArticles.length < articles.length && !loading && (
-        <button onClick={loadMoreArticles} className={css.loadMoreButton}>
-          Load more
-        </button>
+      {!loading && (
+        <>
+          {hasMoreArticles() ? (
+            <button onClick={loadMoreArticles} className={css.loadMoreButton}>
+              Load more
+            </button>
+          ) : (
+            <p>No more articles to load</p>
+          )}
+        </>
       )}
       {loading && <p>Loading...</p>}
-      {visibleArticles.length >= articles.length && !loading && (
-        <p>No more articles to load</p>
-      )}
     </div>
   );
 };
