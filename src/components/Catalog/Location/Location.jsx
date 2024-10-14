@@ -1,6 +1,20 @@
+import { useDispatch } from 'react-redux';
+import { setLocationFilter } from '../../../redux/Trucks/filtersSlice';
+import { useState } from 'react';
 import css from './Location.module.css';
 
 export const Location = () => {
+  const dispatch = useDispatch();
+  const [location, setLocation] = useState('');
+
+  const handleLocationChange = (e) => {
+    const value = e.target.value;
+    console.log(value);
+    
+    setLocation(value);
+    dispatch(setLocationFilter(value));
+  };
+
   return (
     <>
       <p className={css.location}>Location</p>
@@ -14,7 +28,13 @@ export const Location = () => {
       <svg className={css.icon} width="20" height="20">
         <use href="#icon-Map" />
       </svg>
-      <input className={css.locationInput} placeholder='Kyiv, Ukraine' type="text" />
+      <input
+        className={css.locationInput}
+        placeholder="Kyiv, Ukraine"
+        type="text"
+        value={location}
+        onChange={handleLocationChange}
+      />
     </>
   );
 };

@@ -10,16 +10,20 @@ const filtersSlice = createSlice({
       TV: false,
       bathroom: false,
       form: "",
+      location: "",
     },
   },
   reducers: {
     setFilters: (state, action) => {
       state.filters = action.payload;
     },
+    setLocationFilter: (state, action) => {
+      state.filters.location = action.payload;
+    },
   },
 });
 
-export const { setFilters } = filtersSlice.actions;
+export const { setLocationFilter, setFilters } = filtersSlice.actions;
 
 export const selectFilters = (state) => state.filters.filters;
 

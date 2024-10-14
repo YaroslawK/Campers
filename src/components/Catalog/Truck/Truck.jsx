@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchArticles, selectArticles, selectLoading } from "../../../redux/Trucks/slice";
+import {
+  fetchArticles,
+  selectArticles,
+  selectLoading,
+} from "../../../redux/Trucks/slice";
 import { selectFilters } from "../../../redux/Trucks/filtersSlice";
 import css from "../Truck/Truck.module.css";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +14,7 @@ export const Truck = () => {
   const articles = useSelector(selectArticles);
   const loading = useSelector(selectLoading);
   const filters = useSelector(selectFilters);
+  console.log(filters.location)
 
   const [visibleArticles, setVisibleArticles] = useState([]);
   const [page, setPage] = useState(1);
@@ -34,15 +39,16 @@ export const Truck = () => {
         (!filters.bathroom || article.bathroom) &&
         (!filters.water || article.water) &&
         (!filters.gas || article.gas) &&
-        (!filters.form || 
-          article.form === filters.form || 
-          filters.form === "alcove" && article.form === "alcove" ||
-          filters.form === "fullyIntegrated" && article.form === "fullyIntegrated" ||
-          filters.form === "panelTruck" && article.form === "panelTruck")
+        (!filters.location || article.location.toLowerCase().includes(filters.location.toLowerCase())) &&
+        (!filters.form ||
+          article.form === filters.form ||
+          (filters.form === "alcove" && article.form === "alcove") ||
+          (filters.form === "fullyIntegrated" &&
+            article.form === "fullyIntegrated") ||
+          (filters.form === "panelTruck" && article.form === "panelTruck"))
       );
     });
 
-    console.log(filteredArticles);
 
     const newVisibleArticles = filteredArticles.slice(0, page * perPage);
     setVisibleArticles(newVisibleArticles);
@@ -62,13 +68,18 @@ export const Truck = () => {
         (!filters.bathroom || article.bathroom) &&
         (!filters.water || article.water) &&
         (!filters.gas || article.gas) &&
-        (!filters.form || 
-          article.form === filters.form || 
-          filters.form === "alcove" && article.form === "alcove" ||
-          filters.form === "fullyIntegrated" && article.form === "fullyIntegrated" ||
-          filters.form === "panelTruck" && article.form === "panelTruck")
+        (!filters.location || article.location.toLowerCase().includes(filters.location.toLowerCase())) &&
+        (!filters.form ||
+          article.form === filters.form ||
+          (filters.form === "alcove" && article.form === "alcove") ||
+          (filters.form === "fullyIntegrated" &&
+            article.form === "fullyIntegrated") ||
+          (filters.form === "panelTruck" && article.form === "panelTruck"))
+        
+        
       );
     });
+    
     return visibleArticles.length < filteredArticles.length;
   };
 
@@ -93,41 +104,30 @@ export const Truck = () => {
                 <p className={css.rating}>{article.rating}</p>
                 <p className={css.location}>{article.location}</p>
                 <p className={css.description}>{article.description}</p>
-
-                {article.transmission === "automatic" && (
-                  <button className={css.icon}>Automatic</button>
-                )}
-                {article.transmission === "manual" && (
-                  <button className={css.icon}>Manual</button>
-                )}
-                {article.fuel === "petrol" && (
-                  <button className={css.icon}>Petrol</button>
-                )}
-                {article.fuel === "diesel" && (
-                  <button className={css.icon}>Diesel</button>
-                )}
-                {article.fuel === "hybrid" && (
-                  <button className={css.icon}>Hybrid</button>
-                )}
-                {article.kitchen && (
-                  <button className={css.icon}>Kitchen</button>
-                )}
-                {article.AC && (
-                  <button className={css.icon}>AC</button>
-                )}
-                {article.bathroom && (
-                  <button className={css.icon}>Bathroom</button>
-                )}
-                {article.water && (
-                  <button className={css.icon}>Water</button>
-                )}
-                {article.gas && (
-                  <button className={css.icon}>Gas</button>
-                )}
-                {article.TV && (
-                  <button className={css.icon}>TV</button>
-                )}
-
+                <div className={css.vehicleTypes}>
+                  {article.transmission === "automatic" && (
+                    <p className={css.typeIcon}>Automatic</p>
+                  )}
+                  {article.transmission === "manual" && (
+                    <p className={css.typeIcon}>Manual</p>
+                  )}
+                  {article.fuel === "petrol" && (
+                    <p className={css.typeIcon}>Petrol</p>
+                  )}
+                  {article.fuel === "diesel" && (
+                    <p className={css.typeIcon}>Diesel</p>
+                  )}
+                  {article.fuel === "hybrid" && (
+                    <p className={css.typeIcon}>Hybrid</p>
+                  )}
+                  {article.kitchen && <p className={css.typeIcon}>Kitchen</p>}
+                  {article.AC && <p className={css.typeIcon}>AC</p>}
+                  {article.bathroom && <p className={css.typeIcon}>Bathroom</p>}
+                  {article.water && <p className={css.typeIcon}>Water</p>}
+                  {article.gas && <p className={css.typeIcon}>Gas</p>}
+                  {article.TV && <p className={css.typeIcon}>TV</p>}
+                  
+                </div>
 
                 <button
                   className={css.button}
