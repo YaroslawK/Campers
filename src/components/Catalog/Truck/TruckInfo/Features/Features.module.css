@@ -1,0 +1,24 @@
+.typeIcon {
+    border-radius: 100px;
+        /* Badges */
+        background: rgb(242, 244, 247);
+        align-items: center;
+    
+        padding: 12px 18px 12px 18px;
+        /* Body 2 */
+        color: rgb(16, 24, 40);
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0%;
+        text-align: center;
+
+}
+
+
+.iconContainer {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 100px;
+}

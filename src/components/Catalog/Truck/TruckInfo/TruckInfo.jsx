@@ -20,6 +20,7 @@ export const TruckInfo = () => {
   return (
     <>
       <Navigation />
+  
       {loading ? ( 
         <p>Loading...</p> 
       ) : truckDetails ? ( 
@@ -38,7 +39,7 @@ export const TruckInfo = () => {
       ) : (
         <p>No truck details found</p> 
       )}
-      
+
       <InfoNavigation />
     </>
   );

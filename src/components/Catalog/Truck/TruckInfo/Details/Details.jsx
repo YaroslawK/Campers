@@ -1,9 +1,14 @@
-import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { setTruckDetails, clearTruckDetails, selectTruckDetails } from '../../../../../redux/Trucks/detailsSlice';
-import { selectArticles} from '../../../../../redux/Trucks/slice';
-import css from './Details.module.css';
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setTruckDetails,
+  clearTruckDetails,
+  selectTruckDetails,
+} from "../../../../../redux/Trucks/detailsSlice";
+import { selectArticles } from "../../../../../redux/Trucks/slice";
+import css from "./Details.module.css";
+import { Features } from "../Features/Features";
 
 export const Details = () => {
   const { id } = useParams();
@@ -11,17 +16,15 @@ export const Details = () => {
   const articles = useSelector(selectArticles);
   const truckDetails = useSelector(selectTruckDetails);
 
-  
-
   useEffect(() => {
     if (articles.length > 0) {
-      const article = articles.find(article => article.id === id);
+      const article = articles.find((article) => article.id === id);
       if (article) {
-        dispatch(setTruckDetails(article)); 
+        dispatch(setTruckDetails(article));
       }
     }
     return () => {
-      dispatch(clearTruckDetails()); 
+      dispatch(clearTruckDetails());
     };
   }, [articles, id, dispatch]);
 
@@ -31,13 +34,7 @@ export const Details = () => {
 
   return (
     <>
-      <div className={css.iconContainer}>
-        <button className={css.icon}>Automatic</button>
-        <button className={css.icon}>AC</button>
-        <button className={css.icon}>Petrol</button>
-        <button className={css.icon}>Kitchen</button>
-        <button className={css.icon}>Radio</button>
-      </div>
+      <Features />
       <h2 className={css.detailsTitle}>Vehicle details</h2>
       <table className={css.vehicleDetails}>
         <tbody>
