@@ -14,7 +14,6 @@ export const Truck = () => {
   const articles = useSelector(selectArticles);
   const loading = useSelector(selectLoading);
   const filters = useSelector(selectFilters);
-  console.log(filters.location)
 
   const [visibleArticles, setVisibleArticles] = useState([]);
   const [page, setPage] = useState(1);

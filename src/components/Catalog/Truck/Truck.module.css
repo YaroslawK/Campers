@@ -8,6 +8,7 @@
         /* White */
         background: rgb(255, 255, 255);
         width: 888px;
+        margin-bottom: 40px;
 }
 
 .image{
@@ -129,4 +130,22 @@
                     line-height: 24px;
                     letter-spacing: 0%;
                     text-align: center;
+}
+
+.loadMoreButton{
+    padding: 16px 32px 16px 32px;
+    box-sizing: border-box;
+        /* Gray light */
+        border: 1px solid rgb(218, 221, 225);
+        border-radius: 200px;
+        background-color: white;
+        color: rgb(16, 24, 40);
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+            letter-spacing: -0.5%;
+            text-align: left;
+            margin-left: auto  ;
+            margin-right: auto;
 }

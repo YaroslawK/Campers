@@ -9,7 +9,6 @@ export const Location = () => {
 
   const handleLocationChange = (e) => {
     const value = e.target.value;
-    console.log(value);
     
     setLocation(value);
     dispatch(setLocationFilter(value));
