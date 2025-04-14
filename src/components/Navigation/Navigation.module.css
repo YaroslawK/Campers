@@ -1,64 +1,61 @@
-.navigationContainer{
-    max-width: 1440px;
-        padding-left: 64px;
-        padding-right: 64px;
-        margin-left: auto;
-        margin-right: auto;
-        display: flex;
-        align-items: center;
-        box-sizing: border-box;
-            /* Badges */
-            border-bottom: 1px solid rgb(242, 244, 247);
-            /* Inputs */
-            background: rgb(247, 247, 247);
+.navSection {
+  background-color: rgb(247, 247, 247);
 }
 
-.navigation{
-    display:  flex;
-    gap: 32px;
+.navigationContainer {
+  max-width: 1440px;
+  padding-left: 64px;
+  padding-right: 64px;
+  padding-bottom: 24px;
+  padding-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgb(242, 244, 247);
 }
 
-.nav{
-    color: rgb(16, 24, 40);
-        font-family: Inter;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 24px;
-        letter-spacing: 0%;
-        text-align: center;
+.navigation {
+  display: flex;
+  gap: 32px;
 }
 
-.nav:hover{
-   color: #D84343; 
+.nav {
+  color: rgb(16, 24, 40);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.nav:hover {
+  color: #d84343;
 }
 
 .nav:focus {
-    color: #D84343;
+  color: #d84343;
 }
 
 .active {
-    color: #D84343;
-    font-weight: bold;
+  color: #d84343;
+  font-weight: bold;
 }
 
-.logo{
-color: #101828;
-font-family: Inter;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 32px;
-    letter-spacing: 0%;
-    text-align: left;
-    margin-right: 450px;
-  
+.logo {
+  color: #101828;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-right: 450px;
+  font-weight: 800;
 }
 
-.logoSpan{
-    color: #475467;
-}
-
-.navigationSection{
-    display: flex;
-    margin: 24px 0px;
-    
+.logoSpan {
+  color: #475467;
 }

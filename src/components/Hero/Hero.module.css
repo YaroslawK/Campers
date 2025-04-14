@@ -1,65 +1,60 @@
-.background{
-background-image: url('../../images/Home.jpg');
-background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.hero{
-height: 100vh;
-  
-    
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    color: white;
-    text-align: center;
+.hero {
+  height: 100vh;
 
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  color: white;
+  text-align: center;
+  background-image: url("../../images/Home.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.heroContainer{
-    padding: 64px;
+.heroContainer {
+  padding: 64px;
 }
 
-.heroTitle{
-    color: rgb(247, 247, 247);
-    font-family: Inter;
-    font-size: 48px;
-    font-weight: 600;
-    line-height: 32px;
-    letter-spacing: 0%;
-    text-align: left;
-    margin-bottom: 16px;
+.heroTitle {
+  color: rgb(247, 247, 247);
+  font-family: Inter;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-bottom: 16px;
 }
 
-.heroCaption{
-    color: rgb(247, 247, 247);
-    font-family: Inter;
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 32px;
-    letter-spacing: 0%;
-    text-align: left;
-    margin-bottom: 40px;
+.heroCaption {
+  color: rgb(247, 247, 247);
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-bottom: 40px;
 }
 
-.heroButton{
-        position: static;
-        width: 200px;
-        height: 56px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 10;
-        padding: 16px 60px 16px 60px;
-    
-    
-        flex: none;
-        order: 1;
-        flex-grow: 0;
-        margin: 40px 0px;
+.heroButton {
+  position: static;
+  width: 200px;
+  height: 56px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10;
+  padding: 16px 60px 16px 60px;
 
-        border-radius: 200px;
-        
-            background: rgb(228, 72, 72);
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 40px 0px;
+
+  border-radius: 200px;
+
+  background: rgb(228, 72, 72);
 }

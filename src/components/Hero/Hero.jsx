@@ -1,21 +1,22 @@
 import { useNavigate } from "react-router-dom";
-import css from './Hero.module.css';
+import css from "./Hero.module.css";
+import { MainButton } from "../mainButton/mainButton";
 export const Hero = () => {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate('/catalog');
+    navigate("/catalog");
   };
 
-  return <div className={css.background}>
+  return (
     <section className={css.hero}>
       <div className={css.heroContainer}>
         <h1 className={css.heroTitle}>Campers of your dreams</h1>
-        <p className={css.heroCaption}>You can find everything you want in our catalog</p>
-        <button className={css.heroButton} onClick={handleButtonClick}>
-          View Now
-        </button>
+        <p className={css.heroCaption}>
+          You can find everything you want in our catalog
+        </p>
+        <MainButton onClick={handleButtonClick}>View Now</MainButton>
       </div>
     </section>
-</div>
+  );
 };

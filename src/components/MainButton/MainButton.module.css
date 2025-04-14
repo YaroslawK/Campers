@@ -1,0 +1,17 @@
+.button {
+  position: static;
+  width: 200px;
+  height: 56px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10;
+  padding: 16px 60px 16px 60px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 40px 0px;
+  border-radius: 200px;
+  background: rgb(228, 72, 72);
+}

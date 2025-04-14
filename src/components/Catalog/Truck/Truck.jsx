@@ -8,6 +8,8 @@ import {
 import { selectFilters } from "../../../redux/Trucks/filtersSlice";
 import css from "../Truck/Truck.module.css";
 import { useNavigate } from "react-router-dom";
+import { MainButton } from "../../mainButton/mainButton";
+import star from "/public/star.svg";
 
 export const Truck = () => {
   const dispatch = useDispatch();
@@ -38,7 +40,10 @@ export const Truck = () => {
         (!filters.bathroom || article.bathroom) &&
         (!filters.water || article.water) &&
         (!filters.gas || article.gas) &&
-        (!filters.location || article.location.toLowerCase().includes(filters.location.toLowerCase())) &&
+        (!filters.location ||
+          article.location
+            .toLowerCase()
+            .includes(filters.location.toLowerCase())) &&
         (!filters.form ||
           article.form === filters.form ||
           (filters.form === "alcove" && article.form === "alcove") ||
@@ -47,7 +52,6 @@ export const Truck = () => {
           (filters.form === "panelTruck" && article.form === "panelTruck"))
       );
     });
-
 
     const newVisibleArticles = filteredArticles.slice(0, page * perPage);
     setVisibleArticles(newVisibleArticles);
@@ -67,18 +71,19 @@ export const Truck = () => {
         (!filters.bathroom || article.bathroom) &&
         (!filters.water || article.water) &&
         (!filters.gas || article.gas) &&
-        (!filters.location || article.location.toLowerCase().includes(filters.location.toLowerCase())) &&
+        (!filters.location ||
+          article.location
+            .toLowerCase()
+            .includes(filters.location.toLowerCase())) &&
         (!filters.form ||
           article.form === filters.form ||
           (filters.form === "alcove" && article.form === "alcove") ||
           (filters.form === "fullyIntegrated" &&
             article.form === "fullyIntegrated") ||
           (filters.form === "panelTruck" && article.form === "panelTruck"))
-        
-        
       );
     });
-    
+
     return visibleArticles.length < filteredArticles.length;
   };
 
@@ -100,7 +105,10 @@ export const Truck = () => {
                   <h2 className={css.title}>{article.name}</h2>
                   <p className={css.price}>€{article.price}.00</p>
                 </div>
-                <p className={css.rating}>{article.rating}</p>
+                <p className={css.rating}>
+                  <img src={star} alt="" />
+                  {article.rating}
+                </p>
                 <p className={css.location}>{article.location}</p>
                 <p className={css.description}>{article.description}</p>
                 <div className={css.vehicleTypes}>
@@ -125,15 +133,10 @@ export const Truck = () => {
                   {article.water && <p className={css.typeIcon}>Water</p>}
                   {article.gas && <p className={css.typeIcon}>Gas</p>}
                   {article.TV && <p className={css.typeIcon}>TV</p>}
-                  
                 </div>
-
-                <button
-                  className={css.button}
-                  onClick={() => handleButtonClick(article.id)}
-                >
+                <MainButton onClick={() => handleButtonClick(article.id)}>
                   Show more
-                </button>
+                </MainButton>
               </div>
             </li>
           ))}

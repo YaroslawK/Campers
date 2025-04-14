@@ -1,151 +1,150 @@
-.truckContainer{
-    display: flex;
-    padding: 24px;
-    box-sizing: border-box;
-        /* Gray light */
-        border: 1px solid rgb(218, 221, 225);
-        border-radius: 20px;
-        /* White */
-        background: rgb(255, 255, 255);
-        width: 888px;
-        margin-bottom: 40px;
+.truckContainer {
+  display: flex;
+  padding: 24px;
+  box-sizing: border-box;
+  /* Gray light */
+  border: 1px solid rgb(218, 221, 225);
+  border-radius: 20px;
+  /* White */
+  background: rgb(255, 255, 255);
+  width: 888px;
+  margin-bottom: 40px;
 }
 
-.image{
-    width: 292px;
-        height: 320px;
-        border-radius: 10px;
-        margin-right: 24px;
+.image {
+  width: 292px;
+  height: 320px;
+  border-radius: 10px;
+  margin-right: 24px;
 }
 
-.title{
-    color: rgb(16, 24, 40);
-        font-family: Inter;
-        font-size: 24px;
-        font-weight: 600;
-        line-height: 32px;
-        letter-spacing: 0%;
-        text-align: left;
+.title {
+  color: rgb(16, 24, 40);
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0%;
+  text-align: left;
 }
 
-.price{
-    color: rgb(16, 24, 40);
-        font-family: Inter;
-        font-size: 24px;
-        font-weight: 600;
-        line-height: 32px;
-        letter-spacing: 0%;
-        text-align: left;
+.price {
+  color: rgb(16, 24, 40);
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0%;
+  text-align: left;
 }
 
-.rating{
-    color: rgb(16, 24, 40);
-        font-family: Inter;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
-        letter-spacing: 0%;
-        text-align: left;
+.rating {
+  color: rgb(16, 24, 40);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: left;
 }
 
-.location{
-    color: rgb(16, 24, 40);
-        font-family: Inter;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
-        letter-spacing: 0%;
-        text-align: left;
+.location {
+  color: rgb(16, 24, 40);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: left;
 }
 
-.description{
-    color: rgb(71, 84, 103);
-        font-family: Inter;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
-        letter-spacing: 0%;
-        text-align: left;
+.description {
+  color: rgb(71, 84, 103);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: left;
 }
 
-.icon{
-    border-radius: 100px;
-        /* Badges */
-        background: rgb(242, 244, 247);
-        padding: 12px 18px 12px 18px;
-        width: 123px;
-            height: 48px;
+.icon {
+  border-radius: 100px;
+  /* Badges */
+  background: rgb(242, 244, 247);
+  padding: 12px 18px 12px 18px;
+  width: 123px;
+  height: 48px;
 }
 
-.icon:hover{
-    border: 1px solid rgb(228, 72, 72);
+.icon:hover {
+  border: 1px solid rgb(228, 72, 72);
 }
 
-.button{
-            position: static;
-                width: 200px;
-                height: 56px;
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                gap: 10;
-                padding: 16px 60px 16px 60px;
-            
-            
-                flex: none;
-                order: 1;
-                flex-grow: 0;
-                margin: 40px 0px;
-            
-                border-radius: 200px;
-            
-                background: rgb(228, 72, 72);
+.button {
+  position: static;
+  width: 200px;
+  height: 56px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10;
+  padding: 16px 60px 16px 60px;
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 40px 0px;
+
+  border-radius: 200px;
+
+  background: rgb(228, 72, 72);
 }
 
-.cont{
-    display: flex;
-    justify-content: space-between;
+.cont {
+  display: flex;
+  justify-content: space-between;
 }
 
-.vehicleTypes{
-    display:  flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
+.vehicleTypes {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
-.typeIcon{
-    border-radius: 100px;
-        /* Badges */
-        background: rgb(242, 244, 247);
-        align-items: center;
-          
-            padding: 12px 18px 12px 18px;
-                /* Body 2 */
-                    color: rgb(16, 24, 40);
-                    font-family: Inter;
-                    font-size: 16px;
-                    font-weight: 500;
-                    line-height: 24px;
-                    letter-spacing: 0%;
-                    text-align: center;
+.typeIcon {
+  border-radius: 100px;
+  /* Badges */
+  background: rgb(242, 244, 247);
+  align-items: center;
+
+  padding: 12px 18px 12px 18px;
+  /* Body 2 */
+  color: rgb(16, 24, 40);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: center;
 }
 
-.loadMoreButton{
-    padding: 16px 32px 16px 32px;
-    box-sizing: border-box;
-        /* Gray light */
-        border: 1px solid rgb(218, 221, 225);
-        border-radius: 200px;
-        background-color: white;
-        color: rgb(16, 24, 40);
-            font-family: Inter;
-            font-size: 16px;
-            font-weight: 500;
-            line-height: 24px;
-            letter-spacing: -0.5%;
-            text-align: left;
-            margin-left: auto  ;
-            margin-right: auto;
+.loadMoreButton {
+  padding: 16px 32px 16px 32px;
+  box-sizing: border-box;
+  /* Gray light */
+  border: 1px solid rgb(218, 221, 225);
+  border-radius: 200px;
+  background-color: white;
+  color: rgb(16, 24, 40);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.5%;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
 }
