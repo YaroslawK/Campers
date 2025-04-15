@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import css from "./Hero.module.css";
-import { MainButton } from "../mainButton/mainButton";
+import { MainButton } from "../../components/MainButton/MainButton";
+
 export const Hero = () => {
   const navigate = useNavigate();
 

@@ -1,7 +1,7 @@
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import css from "./BookingForm.module.css";
-import { MainButton } from "../../../../mainButton/mainButton";
+import { MainButton } from "../../../../MainButton/MainButton";
 
 export const BookingForm = () => {
   const validationSchema = Yup.object({

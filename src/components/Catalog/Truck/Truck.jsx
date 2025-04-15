@@ -8,7 +8,7 @@ import {
 import { selectFilters } from "../../../redux/Trucks/filtersSlice";
 import css from "../Truck/Truck.module.css";
 import { useNavigate } from "react-router-dom";
-import { MainButton } from "../../mainButton/mainButton";
+import { MainButton } from "../../MainButton/MainButton";
 import star from "/public/star.svg";
 
 export const Truck = () => {
